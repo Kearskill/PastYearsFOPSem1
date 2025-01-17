@@ -17,18 +17,13 @@ interface Playable{
     void play();
 }
 class Guitar implements Playable{
-    public Guitar(){
-    }
-
     @Override
     public void play(){
         System.out.println("Playing the Guitar!");
     }
 }
-class Piano implements Playable{
-    public Piano(){
 
-    }
+class Piano implements Playable{
     @Override
     public void play(){
         System.out.println("Playing the Piano!");
