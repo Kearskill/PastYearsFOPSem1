@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+// doi is digital object identifier btw
+
 public class Q3 {
     public static void main(String[] args) { // driver main
         String inputFile = "src/paper2024/oaiset.csv";
@@ -15,6 +17,7 @@ public class Q3 {
         System.out.println("\nThe summary report is as follow:");
         reportData(cleanRecord(data));
     }
+
     public static void loadRecord(String filename, OAIRecord[] data) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
@@ -24,7 +27,7 @@ public class Q3 {
             br.readLine();
 
             while ((line = br.readLine()) != null && index < data.length) {
-                String[] fields = line.split(","); // -1 keeps empty fields
+                String[] fields = line.split(",", -1); // -1 keeps empty fields
 
                 if (fields.length != 13) {
                     System.out.println("Skipping invalid record at line " + (index + 2));
@@ -109,6 +112,22 @@ class OAIRecord{
 
     public String getStatus() {
         return status;
+    }
+    @Override
+    public String toString() {
+        return "Doi : " + doi + "\n" +
+                "Title : " + title + "\n" +
+                "Subject : " + subject + "\n" +
+                "Author1 : " + author1 + "\n" +
+                "Author2 : " + author2 + "\n" +
+                "Author3 : " + author3 + "\n" +
+                "Author4 : " + author4 + "\n" +
+                "Author5 : " + author5 + "\n" +
+                "Author6 : " + author6 + "\n" +
+                "Author7 : " + author7 + "\n" +
+                "Author8 : " + author8 + "\n" +
+                "Keyword : " + keyword + "\n" +
+                "Status : " + status + "\n\n\n";
     }
 }
 
