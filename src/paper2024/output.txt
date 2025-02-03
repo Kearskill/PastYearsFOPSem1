@@ -1,0 +1,4 @@
+seat: a : James Bond, 43 years old
+seat: b : Madeleine, 36 years old
+seat: c : Evelyn Wang, 57 years old
+seat: d : WaymondWang, 49 years old
